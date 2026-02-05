@@ -1,0 +1,105 @@
+<!-- Main Page: valentines-main.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #ffe4e1, #ffb6c1, #ff69b4);
+            color: #4a0e4e;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff1493;
+            max-width: 500px;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        button {
+            background: linear-gradient(to right, #ff69b4, #ff1493);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 25px;
+            margin: 10px;
+            transition: background 0.3s;
+            position: relative;
+        }
+        button:hover {
+            background: linear-gradient(to right, #d63384, #c2185b);
+        }
+        #noBtn {
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine?</h1>
+        <p> Will you make this Valentine's Day special with me?</p>
+        <button onclick="window.location.href='valentines-gifts.html'">Yes!</button>
+        <button id="noBtn" onclick="handleNo()">No</button>
+    </div>
+
+    <script>
+        let noTexts = [
+            "Are you sure?",
+            "Pakka?",
+            "I will be sad 😢",
+            "Please say yes!",
+            "One more chance?",
+            "You're breaking my heart 💔",
+            "Final warning: Yes!",
+            "Think again!",
+            "Don't do this to me!",
+            "I promise it'll be fun!",
+            "Say yes, pretty please?",
+            "You're my dream come true!",
+            "I can't take no for an answer!",
+            "Let's make memories!",
+            "You're too amazing to say no!"
+        ];
+        let usedTexts = [];
+
+        function handleNo() {
+            const btn = document.getElementById('noBtn');
+            // Move randomly
+            btn.style.left = Math.random() * (window.innerWidth - 200) + 'px';
+            btn.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+            btn.style.position = 'absolute';
+            
+            // Change text uniquely (no repeats)
+            if (noTexts.length === 0) {
+                noTexts = [...usedTexts]; // Reset if all used
+                usedTexts = [];
+            }
+            const randomIndex = Math.floor(Math.random() * noTexts.length);
+            const selectedText = noTexts.splice(randomIndex, 1)[0];
+            usedTexts.push(selectedText);
+            btn.innerText = selectedText;
+        }
+    </script>
+</body>
+</html>
