@@ -1,0 +1,217 @@
+<!-- Gifts Page: valentines-gifts.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Valentine's Gifts</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #ffe4e1, #ffb6c1, #ff69b4);
+            color: #4a0e4e;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .gift {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ff1493;
+        }
+        h1 {
+            color: #d63384;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #d63384;
+            text-align: center;
+            font-size: 2em;
+        }
+        p, .shayri {
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .shayri {
+            font-style: italic;
+            margin: 20px 0;
+        }
+        .photo-collage {
+            display: none; /* Hidden initially, shows only on click */
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .photo-collage img, .photo-collage video {
+            position: absolute;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .photo-collage img:hover, .photo-collage video:hover {
+            transform: scale(1.05);
+        }
+        .photo-collage img:nth-child(1) { /* Big center photo */
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .photo-collage img:nth-child(2) { /* Top left, medium */
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            left: 10%;
+        }
+        .photo-collage img:nth-child(3) { /* Top right, small */
+            width: 100px;
+            height: 100px;
+            top: 15%;
+            right: 10%;
+        }
+        .photo-collage img:nth-child(4) { /* Bottom left, medium */
+            width: 130px;
+            height: 130px;
+            bottom: 10%;
+            left: 15%;
+        }
+        .photo-collage img:nth-child(5) { /* Bottom right, small */
+            width: 110px;
+            height: 110px;
+            bottom: 15%;
+            right: 15%;
+        }
+        .photo-collage video:nth-child(6) { /* Video 1, top center */
+            width: 150px;
+            height: 100px;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .photo-collage video:nth-child(7) { /* Video 2, left center */
+            width: 120px;
+            height: 80px;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+        }
+        .photo-collage video:nth-child(8) { /* Video 3, right center */
+            width: 120px;
+            height: 80px;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+        }
+        button {
+            background: linear-gradient(to right, #ff69b4, #ff1493);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 25px;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(to right, #d63384, #c2185b);
+        }
+        .surprise-video {
+            display: none; /* Hidden initially */
+            text-align: center;
+            margin: 20px auto;
+            max-width: 300px; /* 9:16 ratio: width 300px, height ~533px */
+        }
+        .surprise-video video {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 9/16; /* Ensures 9:16 ratio */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Valentine's Gifts, Darling!</h1>
+
+        <!-- Gift 1: Shayri -->
+        <div class="gift">
+                        <div class="shayri">
+                Teri aankhon mein kho jaana chahta hoon 👀❤️<br>
+Har pal bas tera ho jaana chahta hoon 💞✨<br>
+Is Valentine par ek hi dua hai meri 💖<br>
+Tu meri ho… main tera hona chahta hoon 💍🥰<br>
+            </div>
+        </div>
+
+        <!-- Gift 2: Photo and Video Collage -->
+        <div class="gift">
+            <h2>Want to see what's in my heartt...</h2>
+            <p>Click below!</p>
+            <button onclick="showCollage()">Click Here</button>
+            <div class="photo-collage" id="photoCollage">
+                <img src="photo1.jpg" alt="Photo 1">
+                <img src="photo2.jpg" alt="Photo 2">
+                <img src="photo3.jpg" alt="Photo 3">
+                <img src="photo4.jpg" alt="Photo 4">
+                <img src="photo5.jpg" alt="Photo 5">
+                <video controls>
+                    <source src="vid1.mp4" type="video/mp4">
+                </video>
+                <video controls>
+                    <source src="vid2.mp4" type="video/mp4">
+                </video>
+                <video controls>
+                    <source src="vid3.mp4" type="video/mp4">
+                </video><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                You are the one present in the heart everytime...<br>
+            </div>
+        </div>
+
+        <!-- Gift 3: Surprise Video -->
+        <div class="gift">
+            <h2>Surprise Video</h2>
+            <p>I want to show you the person I love the mostt.... </p>
+            <p>I have a video of her , That I quitely got from somewhere.....</p>
+            <button onclick="showVideo()">Click and Watch</button>
+            <div class="surprise-video" id="surpriseVideo">
+                <video controls>
+                    <source src="gift3vid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                Tu saath ho to har din tyohar lagta hai 🎉❤️<br>
+Tera pyaar hi mujhe sabse pyara lagta hai 💖🌹<br>
+Har roz mujhe aisa hi ehsaas hota hai 😌✨<br>
+Tu meri hai… ye khuda ka ishara lagta hai 🤲💘<br>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showCollage() {
+            const collage = document.getElementById('photoCollage');
+            collage.style.display = 'block';
+            collage.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showVideo() {
+            const videoDiv = document.getElementById('surpriseVideo');
+            videoDiv.style.display = 'block';
+            videoDiv.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
